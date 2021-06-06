@@ -64,28 +64,28 @@ public class Q2 {
     // public int indexOf()
 
     // public boolean contains(List<Integer> countList) {
-    public int indexOf(List<Integer> countList) {
-        int i = 0;
-        for (i = 0; i < countList.size(); i++) {
-            if (countList.get(i).equals(countList.get(i))) {
-                return i;
-            }
-        }
-
-        return -1;
-    }
-    // public int indexOf(Object countList){
+    // public int indexOf(List<Integer> countList) {
     // int i = 0;
-    // int size = 0;
-    // int arr[] = new int[size];
-    // for(i = 0; i < size; i++){
-    // if(arr[i].equals(countList)){
+    // for (i = 0; i < countList.size(); i++) {
+    // if (countList.get(i).equals(countList.get(i))) {
     // return i;
     // }
     // }
 
     // return -1;
     // }
+    public int indexOf(Object countList) {
+        int i = 0;
+        int size = 0;
+        int arr[] = new int[size];
+        for (i = 0; i < size; i++) {
+            if (countList.equals(arr[i])) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
 
     public static int[] convertToIntArray(List<Integer> countList) {
         int[] returnArray = new int[countList.size()];
@@ -132,6 +132,9 @@ public class Q2 {
 
             // 랜덤한 수에서 중복 제거
             temp = convertToIntArray(countList);
+            if(countList.indexOf(temp[i])){
+                
+            }
             // if (!countList.containList(temp[i])) {
 
             // }
@@ -160,10 +163,10 @@ public class Q2 {
             // countList.add(temp[j]);
             // }
             // }
-            if (!countList.contains(temp[i])) {
-                countList.add(temp[i]);
-                out.println(countList);
-            }
+            // if (!countList.contains(temp[i])) {
+            //     countList.add(temp[i]);
+            //     out.println(countList);
+            // }
         }
 
         int currentValue = 0; // 현재 값

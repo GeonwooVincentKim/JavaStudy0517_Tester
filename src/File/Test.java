@@ -99,8 +99,8 @@ public class Test {
         int i = 1;
 
         // 합계 저장 및 randomArray 출력
-        // randomArray = getRandomNumber(randomArray);
-        sum = sumRandomNumber(randomArray);
+        randomArray = getRandomNumber(randomArray);
+        // sum = sumRandomNumber(randomArray);
 
         // for (i = 0; i < randomArray.length; i++) {
         // randomArray[i] = randomRange(11, 99);
