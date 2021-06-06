@@ -63,6 +63,18 @@ public class Q2 {
 
     // public int indexOf()
 
+    public static int indexOfValue(List<Integer> countList, int[] temp) {
+        int count = 0;
+
+        for (int i = 1; i < countList.size(); i++) {
+            if (temp.equals(countList.get(i))) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
     // public boolean contains(List<Integer> countList) {
     // public int indexOf(List<Integer> countList) {
     // int i = 0;
@@ -74,17 +86,56 @@ public class Q2 {
 
     // return -1;
     // }
-    public int indexOf(Object countList) {
+    // public int indexOfValue(List<Integer> countList) {
+    // int i = 0;
+    // int size = 0;
+    // int arr[] = new int[size];
+    // for (i = 0; i < size; i++) {
+    // if (countList.equals(arr[i])) {
+    // return i;
+    // }
+    // }
+
+    // return -1;
+    // }
+
+    public int indexOf(String str) {
+        return indexOf(str);
+    }
+
+    public boolean containsIt(Object s) {
+        return indexOf(s.toString()) > -1;
+    }
+
+    public static boolean myContains(List<Integer> countList, int[] temp) {
+        boolean result = false;
+
+        for (int i = 0; (i + temp.length) <= countList.size(); i++) {
+            if (countList.subList(i, i + temp.length).equals(temp)) {
+                result = true;
+            }
+        }
+        return result;
+    }
+
+    public static int indexOfArray(int[] value, List<Integer> countList) {
         int i = 0;
-        int size = 0;
-        int arr[] = new int[size];
-        for (i = 0; i < size; i++) {
-            if (countList.equals(arr[i])) {
+
+        for (i = 0; i < countList.size(); i++) {
+            if (countList.get(i).equals(value[i])) {
                 return i;
             }
         }
 
         return -1;
+    }
+
+    public static boolean containsOf(int[] temp, List<Integer> countList) {
+        if (indexOfArray(temp, countList) >= 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public static int[] convertToIntArray(List<Integer> countList) {
@@ -95,14 +146,14 @@ public class Q2 {
         return returnArray;
     }
 
-    public boolean containList(List<Integer> countList) {
+    // public boolean containList(List<Integer> countList) {
 
-        if (indexOf(countList) >= 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    // if (indexOf(countList) >= 0) {
+    // return true;
+    // } else {
+    // return false;
+    // }
+    // }
 
     // private int indexOf(Object countElement) {
     // int i = 0;
@@ -132,9 +183,21 @@ public class Q2 {
 
             // 랜덤한 수에서 중복 제거
             temp = convertToIntArray(countList);
-            if(countList.indexOf(temp[i])){
-                
+
+            if (!countList.equals(temp[i])) {
+                countList.add(temp[i]);
             }
+            // if (!(countList.contains(temp[i]))) {
+            // countList.add(temp[i]);
+            // }
+            // if (!(containsOf(temp, countList))) {
+            // countList.add(temp[i]);
+            // }
+            // for(int j = 1; j < countList.size(); j++){
+            // if(countList.equals(temp[i])){
+
+            // }
+            // }
             // if (!countList.containList(temp[i])) {
 
             // }
@@ -164,8 +227,8 @@ public class Q2 {
             // }
             // }
             // if (!countList.contains(temp[i])) {
-            //     countList.add(temp[i]);
-            //     out.println(countList);
+            // countList.add(temp[i]);
+            // out.println(countList);
             // }
         }
 
