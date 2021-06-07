@@ -10,9 +10,12 @@
 
 ### Byte-Stream
 - InputStream
+- (FileInputStream)
 - OutputStream
+- (FileOutputStream)
 
 ### Character-Stream
 - Reader
+- (FileReader)
 - Writer
-- fl
+- (FileWriter)
